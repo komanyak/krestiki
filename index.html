@@ -16,66 +16,120 @@
 
   <style>
     html {
-      font-family: Arial, Helvetica, sans-serif;
-    }
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f4f4f4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
 
-    .game {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      width: 150px;
-      margin: 100px auto;
-      padding: 20px;
-      border: 1px solid black;
-    }
+.game {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
 
-    .game-info {
-      margin-bottom: 10px;
-    }
+.game-info {
+  margin-bottom: 15px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+}
 
-    .game-field {
-      display: grid;
-      grid-template-columns: repeat(3, 30px);
-      grid-template-rows: repeat(3, 30px);
-      padding: 1px 0 0 1px;
-    }
+.game-field {
+  display: grid;
+  grid-template-columns: repeat(3, 80px);
+  grid-template-rows: repeat(3, 80px);
+  gap: 5px;
+}
 
-    .cell {
-      border: 1px solid grey;
-      margin: -1px 0 0 -1px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background-color: transparent;
-    }
+.cell {
+  width: 80px;
+  height: 80px;
+  border: none;
+  background: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  font-size: 32px;
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+}
 
-    .cell--win {
-      background: rgba(255, 0, 0, 0.1);
-    }
+.cell:hover {
+  background: #eaeaea;
+}
 
-    .symbol {
-      font-size: 20px;
-      line-height: 24px;
-    }
+.cell:active {
+  transform: scale(0.95);
+}
 
-    .clear {
-      margin-top: 10px;
-      font-size: 16px;
-      background-color: #fff;
-      border: 1px solid black;
-      width: 90px;
-      color: black;
-      text-align: center;
-      padding: 0;
-    }
+.cell--win {
+  background: rgba(0, 255, 0, 0.3);
+}
 
-    .symbol--x {
-      color: red;
-    }
+.symbol--x {
+  color: red;
+}
 
-    .symbol--o {
-      color: green;
-    }
+.symbol--o {
+  color: blue;
+}
+
+.clear {
+  margin-top: 15px;
+  font-size: 18px;
+  background-color: #007bff;
+  border: none;
+  width: 120px;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  border-radius: 7px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.clear:hover {
+  background-color: #0056b3;
+}
+
+.clear:active {
+  background-color: #004095;
+  transform: scale(0.95);
+}
+
+@media (max-width: 600px) {
+  .game-field {
+    grid-template-columns: repeat(3, 60px);
+    grid-template-rows: repeat(3, 60px);
+  }
+
+  .cell {
+    width: 60px;
+    height: 60px;
+    font-size: 28px;
+  }
+
+  .game-info {
+    font-size: 20px;
+  }
+
+  .clear {
+    font-size: 16px;
+    width: 100px;
+  }
+}
   </style>
 </head>
 
