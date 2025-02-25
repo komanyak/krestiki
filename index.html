@@ -58,12 +58,15 @@
       line-height: 24px;
     }
 
-    .clear{
+    .clear {
       margin-top: 10px;
       font-size: 16px;
       background-color: #fff;
       border: 1px solid black;
       width: 90px;
+      color: black;
+      text-align: center;
+      padding: 0;
     }
 
     .symbol--x {
@@ -155,10 +158,10 @@
 
       }
 
-      const clearField = ()=>{
+      const clearField = () => {
         setCells([null, null, null, null, null, null, null, null, null])
       }
-            
+
 
 
       const renderCell = (symbol) => {
