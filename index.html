@@ -58,6 +58,14 @@
       line-height: 24px;
     }
 
+    .clear{
+      margin-top: 10px;
+      font-size: 16px;
+      background-color: #fff;
+      border: 1px solid black;
+      width: 90px;
+    }
+
     .symbol--x {
       color: red;
     }
@@ -147,6 +155,10 @@
 
       }
 
+      const clearField = ()=>{
+        setCells([null, null, null, null, null, null, null, null, null])
+      }
+            
 
 
       const renderCell = (symbol) => {
@@ -170,6 +182,7 @@
               return <button key={index} className={`cell ${isWin ? 'cell--win' : ''}`} onClick={() => handleClick(index)}>{renderCell(symbol)}</button>
             })}
           </div>
+          <button className="clear" onClick={clearField}>Очистить</button>
         </div>
       )
     }
