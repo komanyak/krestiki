@@ -159,7 +159,10 @@
       }
 
       const clearField = () => {
-        setCells([null, null, null, null, null, null, null, null, null])
+        setCells([null, null, null, null, null, null, null, null, null]);
+        setDraw(false);
+        setCurrentStep(SYMBOL_O);
+        setWinCombination();
       }
 
 
